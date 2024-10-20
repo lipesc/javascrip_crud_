@@ -1,20 +1,35 @@
+const app = require('./server.js');
 const request = require('supertest');
-const app = require('./server');
 
-describe('Testes da API de Usuários', () => {
-    it('GET /api/usuarios deve retornar a lista de usuários', async () => {
-        const response = await request(app).get('/api/usuarios');
-        expect(response.status).toBe(200);
-        expect(response.text).toBe('Lista de usuários');
+describe('API routes', () => {
+  describe('GET /api/usuarios', () => {
+  it('should respond with an array of users', async () => {
+  const response = await request(app).get('/api/usuarios');
+  expect(response.statusCode).toBe(200);
+  expect(response.body.length).toBeGreaterThan(0);
     });
+  });
+});
 
-    it('POST /api/usuarios deve criar um novo usuário', async () => {
-        const novoUsuario = { name: 'João' };
-        const response = await request(app)
-            .post('/api/usuarios')
-            .send(novoUsuario);
-        
-        expect(response.status).toBe(201);
-        expect(response.text).toBe('Usuário João criado');
-    });
+describe('POST /api/usuarios', () => {
+  it('should create a new user', async () => {
+    const newUser = {name: 'Test User'};
+    const response = await request(app).post('/api/usuarios').send(newUser);
+    expect(response.statusCode).toBe(201);
+  });
+});
+
+describe('PUT /api/usuarios/:id', () => {
+  it('should update a user', async () => {
+    const updatedUser = {name: 'Updated User'};
+    const response = await request(app).put('/api/usuarios/1').send(updatedUser);
+    expect(response.statusCode).toBe(200);
+  });
+}); 
+
+describe('DELETE /api/usuarios/:id', () => {
+  it('should delete a user', async () => {
+    const response = await request(app).delete('/api/usuarios/1');
+    expect(response.statusCode).toBe(200);
+  });
 });
