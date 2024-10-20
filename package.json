@@ -28,6 +28,8 @@
     "babel-plugin-istanbul": "^7.0.0",
     "express": "^4.21.1",
     "sqlite3": "^5.1.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "test-exclude": "^7.0.1"
   }
 }
