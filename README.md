@@ -5,7 +5,6 @@
  express.js\
  sqlite3\
  swagger
- 
 
  como usar:
 
@@ -56,4 +55,4 @@ mensagem:
 * **PUT /api/usuarios/{id}:** Atualiza um usuário existente.
 * **DELETE /api/usuarios/{id}:** Exclui um usuário. 
 
-
+[![Node.js CI](https://github.com/lipesc/js_manager_users_rest/actions/workflows/node.js.yml/badge.svg)](https://github.com/lipesc/js_manager_users_rest/actions/workflows/node.js.yml)
