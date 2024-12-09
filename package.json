@@ -4,7 +4,9 @@
   "description": "estudos backend v1",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "echo 'No build step defined'", 
+    "test": "echo 'No test step defined'"
   },
   "repository": {
     "type": "git",
